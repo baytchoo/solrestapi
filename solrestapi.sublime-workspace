@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"in",
+				"INDIVIDUAL_CLIENT〔constant〕"
+			],
+			[
 				"soliderrest",
 				"soliderRestAPI"
 			],
@@ -55,14 +59,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "solrestapi.sublime-project",
-			"settings":
-			{
-				"buffer_size": 45,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -110,10 +106,25 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/Abida/soliderRestAPI/solrestapi"
+		"/C/Users/Abida/soliderRestAPI/solrestapi",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Http",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Http/Controllers",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Providers",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/database"
 	],
 	"file_history":
 	[
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app/individual_client.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/database/factories/UserFactory.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/database/migrations/2018_09_14_164502_create_clients_table.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app/company_client.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app/client.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/database/migrations/2018_09_14_164713_create_company_clients_table.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/database/migrations/2018_09_14_164632_create_individual_clients_table.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/.env",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/routes/api.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Providers/AppServiceProvider.php",
 		"/C/Users/Abida/git/RESTfulAPI/database/seeds/DatabaseSeeder.php",
 		"/C/Users/Abida/git/RESTfulAPI/app/Http/Controllers/Buyer/BuyerController.php",
 		"/C/Users/Abida/git/RESTfulAPI/app/Http/Controllers/User/UserController.php",
@@ -179,37 +190,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "solrestapi.sublime-project",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 45,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -294,7 +276,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 229.0,
+	"side_bar_width": 390.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
