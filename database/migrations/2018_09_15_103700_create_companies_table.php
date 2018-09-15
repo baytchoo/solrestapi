@@ -15,8 +15,14 @@ class CreateCompaniesTable extends Migration
     {
         Schema::create('companies', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('company_name');
+            $table->unsignedInteger('person_id')->nullable();
             $table->timestamps();
+
+            $table->foreign('person_id')->references('id')->on('people');
         });
+
+        
     }
 
     /**

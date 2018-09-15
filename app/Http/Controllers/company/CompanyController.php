@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\person;
+namespace App\Http\Controllers\company;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class Person extends Controller
+class CompanyController extends Controller
 {
     /**
      * Display a listing of the resource.

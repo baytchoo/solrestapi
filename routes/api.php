@@ -13,6 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::resource('companies' , 'company\Company' , [ 'except' => ['create' , 'edit']]);
+
+Route::resource('customers' , 'customer\Customer' , [ 'except' => ['create' , 'edit']]);
+
+Route::resource('people' , 'person\Person' , [ 'except' => ['create' , 'edit']]);
+
