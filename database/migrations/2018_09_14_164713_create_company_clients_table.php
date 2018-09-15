@@ -13,10 +13,15 @@ class CreateCompanyClientsTable extends Migration
      */
     public function up()
     {
-        Schema::create('company_clients', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
-        });
+        Schema::create('company_clients',
+                         function (Blueprint $table){
+                                $table->integer('client_id');
+                                $table->string('company_name');
+                                $table->integer('fiscal_code')->unsigned();
+
+                                $table->foreign('client_id')->references('id')->on('clients');
+                        }
+        );
     }
 
     /**

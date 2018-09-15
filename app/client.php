@@ -2,20 +2,20 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Capsule\Eloquent;
 
-class client extends Model
+class client extends Eloquent
 {
-	const INDIVIDUAL_CLIENT = '0';
-	const COMPANY_CLIENT = '1';
+	/*const INDIVIDUAL_CLIENT = '0';
+	*const COMPANY_CLIENT = '1';
+	*/
 
-    protected $fillable = [
-        'type',
-    ];
+	protected $table = "clients";
 
 
-    public function isIndividualClient()
-    {
-    	return $this->type == Client::INDIVIDUAL_CLIENT;
-    }
+
+    /*public function isIndividualClient()
+    *{
+    *	return $this->type == Client::INDIVIDUAL_CLIENT;
+    */}
 }

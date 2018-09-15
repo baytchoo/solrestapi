@@ -14,8 +14,11 @@ class CreateIndividualClientsTable extends Migration
     public function up()
     {
         Schema::create('individual_clients', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+            $table->integer('client_id');
+            $table->string('first_name');
+            $table->string('last_name');
+
+            $table->foreign('client_id')->references('id')->on('clients')
         });
     }
 
