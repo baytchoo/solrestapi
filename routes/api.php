@@ -19,3 +19,8 @@ Route::resource('customers' , 'customer\Customer' , [ 'except' => ['create' , 'e
 
 Route::resource('people' , 'person\Person' , [ 'except' => ['create' , 'edit']]);
 
+Route::resource('telephones' , 'telephone\Telephones' , [ 'except' => ['create' , 'edit']]);
+
+Route::resource('addresses' , 'address\Address' , [ 'except' => ['create' , 'edit']]);
+
+

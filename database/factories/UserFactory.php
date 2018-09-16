@@ -3,6 +3,7 @@
 use App\Company;
 use App\Customer;
 use App\Person;
+use App\Telephone;
 use Faker\Generator as Faker;
 
 /*
@@ -15,6 +16,15 @@ use Faker\Generator as Faker;
 | model instances for testing / seeding your application's database.
 |
 */
+
+$factory->define(Telephone::class, function (Faker $faker) {
+    
+    return [
+        'type'=> $faker->randomElement(Telephone::TYPES),
+        'last_name' => $faker->phoneNumber,
+    ];
+
+});
 
 $factory->define(Person::class, function (Faker $faker) {
     
