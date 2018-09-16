@@ -28,9 +28,19 @@ class DatabaseSeeder extends Seeder
         factory(Person::class, $peapleQuantities)->create();
         factory(Company::class, $companiesQuantities)->create();
 
-        $subjects =factory(Customer::class, $customersQuantities)->make();
+        // $subjects =factory(Customer::class, $customersQuantities)->make();
 
-        foreach ($subjects as $subject) {
+        // foreach ($subjects as $subject) {
+        //     repeat:
+        //     try {
+        //         $subject->save();
+        //     } catch (\Illuminate\Database\QueryException $e) {
+        //         $subject = factory(Customer::class)->make();
+        //         goto repeat;
+        //     }
+        // }
+        for ($i=0; $i < 800; $i++) { 
+            $subject = factory(Customer::class)->make();
             repeat:
             try {
                 $subject->save();

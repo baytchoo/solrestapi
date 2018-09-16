@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"cust",
+				"customerable_tpye"
+			],
+			[
+				"custo",
+				"customerable_id"
+			],
+			[
+				"customera",
+				"customerable_tpye"
+			],
+			[
+				"custom",
+				"customerable"
+			],
+			[
 				"in",
 				"INDIVIDUAL_CLIENT〔constant〕"
 			],
@@ -59,6 +75,23 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "database/seeds/DatabaseSeeder.php",
+			"settings":
+			{
+				"buffer_size": 1428,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "database/factories/UserFactory.php",
+			"settings":
+			{
+				"buffer_size": 3137,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -110,21 +143,41 @@
 		"/C/Users/Abida/soliderRestAPI/solrestapi/app",
 		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Http",
 		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Http/Controllers",
-		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Providers",
-		"/C/Users/Abida/soliderRestAPI/solrestapi/database"
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Http/Controllers/company",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Http/Controllers/customer",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Http/Controllers/person",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/config",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/database",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/database/factories",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/database/migrations",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/database/seeds"
 	],
 	"file_history":
 	[
-		"/C/Users/Abida/soliderRestAPI/solrestapi/app/individual_client.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/database/migrations/2018_09_15_103700_create_companies_table.php",
 		"/C/Users/Abida/soliderRestAPI/solrestapi/database/factories/UserFactory.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Company.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Person.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/database/migrations/2018_09_15_103641_create_people_table.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/database/migrations/2014_10_12_000000_create_users_table.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/database/migrations/2018_09_15_103734_create_customers_table.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Providers/AppServiceProvider.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Customer.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/database/migrations/2018_09_15_103544_create_companies_table.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/database/seeds/DatabaseSeeder.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Http/Controllers/person/PersonController.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Http/Controllers/customer/CustomerController.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Http/Controllers/company/CompanyController.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/routes/api.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Http/Controllers/Company.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Http/Controllers/Customer.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app/individual_client.php",
 		"/C/Users/Abida/soliderRestAPI/solrestapi/database/migrations/2018_09_14_164502_create_clients_table.php",
 		"/C/Users/Abida/soliderRestAPI/solrestapi/app/company_client.php",
 		"/C/Users/Abida/soliderRestAPI/solrestapi/app/client.php",
 		"/C/Users/Abida/soliderRestAPI/solrestapi/database/migrations/2018_09_14_164713_create_company_clients_table.php",
 		"/C/Users/Abida/soliderRestAPI/solrestapi/database/migrations/2018_09_14_164632_create_individual_clients_table.php",
 		"/C/Users/Abida/soliderRestAPI/solrestapi/.env",
-		"/C/Users/Abida/soliderRestAPI/solrestapi/routes/api.php",
-		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Providers/AppServiceProvider.php",
 		"/C/Users/Abida/git/RESTfulAPI/database/seeds/DatabaseSeeder.php",
 		"/C/Users/Abida/git/RESTfulAPI/app/Http/Controllers/Buyer/BuyerController.php",
 		"/C/Users/Abida/git/RESTfulAPI/app/Http/Controllers/User/UserController.php",
@@ -190,8 +243,81 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "database/seeds/DatabaseSeeder.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1428,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								678,
+								678
+							]
+						],
+						"settings":
+						{
+							"SL.16.region_keys":
+							[
+								"sublime_linter.protected_regions"
+							],
+							"SL.49.region_keys":
+							[
+								"sublime_linter.protected_regions"
+							],
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 162.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "database/factories/UserFactory.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 3137,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3100,
+								3083
+							]
+						],
+						"settings":
+						{
+							"SL.25.region_keys":
+							[
+							],
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1566.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],

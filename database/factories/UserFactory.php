@@ -99,7 +99,7 @@ $factory->define(Customer::class, function (Faker $faker) {
         error_log( $customerable_id . " - " . $customerable_type );
         error_log( Customer::all()->count());
     return [
-        'description' => $faker->paragraph(1),
+        'description' => $faker->realText(100),
         'customerable_id' => $customerable_id,
         'customerable_type' => $customerable_type,
     ];
