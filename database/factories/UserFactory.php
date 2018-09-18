@@ -1,10 +1,11 @@
 <?php
 
+use App\Address;
 use App\Company;
 use App\Customer;
 use App\Person;
 use App\Telephone;
-use Faker\Generator as Faker;
+use Faker\Generator as FakerGenerator;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,35 +18,63 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(Telephone::class, function (Faker $faker) {
-    
-    return [
-        'type'=> $faker->randomElement(Telephone::TYPES),
-        'last_name' => $faker->phoneNumber,
-    ];
 
-});
 
-$factory->define(Person::class, function (Faker $faker) {
-    
+$factory->define(Person::class, function (FakerGenerator $faker) {
+    // $faker= Faker\Factory::create('en_US');    
     return [
+
+        'title'=> $faker->title,
         'first_name'=> $faker->firstName,
         'last_name' => $faker->lastName,
+        'cin' => $faker->unique()->numberBetween(1000000,9999999),
+        'email' => $faker->unique()->safeEmail,
+        'address_id'=> '0',
     ];
 
 });
 
 
-$factory->define(Company::class, function (Faker $faker) {
+$factory->define(Company::class, function (FakerGenerator $faker) {
 
     return [
         'company_name'=> $faker->company,
         'person_id' =>Person::all()->random()->id,
+        'tax_reg_nr' => $faker->lexify($string = '??????'),
+        'business_reg_nr' => $faker->lexify($string = '????????'),
+        'email' => $faker->unique()->safeEmail,
+        'person_id' => Person::all()->unique()->random()->id,
     ];
 
 });
 
-$factory->define(Customer::class, function (Faker $faker) {
+$factory->define(Address::class, function (FakerGenerator $faker) {
+    // $faker= Faker\Factory::create('en_US');
+    return [
+        'street'=> $faker->streetName,
+        'nr' => $faker->numberBetween(1,1000),
+        'comment' => $faker->realText(100),
+        'city'=> $faker->city,
+        'country'=> 'tunisie',
+        'zip'=> $faker->numberBetween(11111,99999),
+        'comment' => $faker->realText(50),
+        'lat'=> $faker->latitude,
+        'lng'=> $faker->longitude,
+    ];
+
+});
+
+$factory->define(Telephone::class, function (FakerGenerator $faker) {
+    
+    return [
+        'type'=> $faker->randomElement(Telephone::TYPES),
+        'nr' => $faker->numberBetween(20000000,99999999),
+        'comment' => $faker->realText(50),
+    ];
+
+});
+
+$factory->define(Customer::class, function (FakerGenerator $faker) {
 
 
     
@@ -106,10 +135,10 @@ $factory->define(Customer::class, function (Faker $faker) {
         
 
     
-        error_log( $customerable_id . " - " . $customerable_type );
-        error_log( Customer::all()->count());
+        // error_log( $customerable_id . " - " . $customerable_type );
+        // error_log( Customer::all()->count());
     return [
-        'description' => $faker->realText(100),
+        'description' => $faker->realText(50),
         'customerable_id' => $customerable_id,
         'customerable_type' => $customerable_type,
     ];

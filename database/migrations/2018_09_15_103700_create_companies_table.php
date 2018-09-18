@@ -16,11 +16,11 @@ class CreateCompaniesTable extends Migration
         Schema::create('companies', function (Blueprint $table) {
             $table->increments('id');
             $table->string('company_name');
-            $table->integer('tax_reg_nr');
-            $table->integer('business_reg_nr');
+            $table->string('tax_reg_nr');
+            $table->string('business_reg_nr');
             $table->string('email');
             $table->unsignedInteger('person_id');
-            $table->unsignedInteger('address_id');
+            $table->unsignedInteger('address_id')->nullable();
             $table->timestamps();
 
             $table->foreign('person_id')->references('id')->on('people');

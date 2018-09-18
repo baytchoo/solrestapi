@@ -18,9 +18,9 @@ class CreatePeopleTable extends Migration
             $table->string('title');
             $table->string('first_name');
             $table->string('last_name');
-            $table->integer('cin');
+            $table->integer('cin')->unique();
             $table->string('email');
-            $table->integer('address_id')->unsigned();
+            $table->integer('address_id')->unsigned()->nullable();
             $table->timestamps();
             $table->foreign('address_id')->references('id')->on('addresses');
         });
