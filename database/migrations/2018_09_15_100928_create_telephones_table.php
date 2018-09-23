@@ -18,8 +18,8 @@ class CreateTelephonesTable extends Migration
             $table->string('type');
             $table->integer('nr');
             $table->string('comment');
-            $table->integer('telephoneable_id');
-            $table->string('telephoneable_type');
+            $table->integer('telephoneable_id')->default(null);
+            $table->string('telephoneable_type')->default(null);
             $table->timestamps();
         });
     }

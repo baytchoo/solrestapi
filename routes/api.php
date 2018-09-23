@@ -13,14 +13,14 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::resource('companies' , 'company\Company' , [ 'except' => ['create' , 'edit']]);
+Route::resource('companies' , 'company\CompanyController' , [ 'except' => ['create' , 'edit']]);
 
-Route::resource('customers' , 'customer\Customer' , [ 'except' => ['create' , 'edit']]);
+Route::resource('customers' , 'customer\CustomerController' , [ 'except' => ['create' , 'edit']]);
 
-Route::resource('people' , 'person\Person' , [ 'except' => ['create' , 'edit']]);
+Route::resource('people' , 'person\PersonController' , [ 'except' => ['create' , 'edit']]);
 
-Route::resource('telephones' , 'telephone\Telephones' , [ 'except' => ['create' , 'edit']]);
+Route::resource('telephones' , 'telephone\TelephoneController' , [ 'only' => ['index' , 'show']]);
 
-Route::resource('addresses' , 'address\Address' , [ 'except' => ['create' , 'edit']]);
+Route::resource('addresses' , 'address\AddressController' , [ 'only' => ['index' , 'show']]);
 
 

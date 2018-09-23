@@ -5,6 +5,7 @@ use App\Company;
 use App\Customer;
 use App\Person;
 use App\Telephone;
+use Faker\Factory;
 use Illuminate\Database\QueryException;
 use Illuminate\Database\Seeder;
 
@@ -17,6 +18,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+
+
+        // $faker= Factory::create('en_US');
+
        	DB::statement('SET FOREIGN_KEY_CHECKS = 0');
 
         Person::truncate(); // delete all rows
@@ -25,69 +30,45 @@ class DatabaseSeeder extends Seeder
         Telephone::truncate();
         Address::truncate();
 
-        $peapleQuantities = 1000;
-        $companiesQuantities = 300;
-        $customersQuantities = 800;
+        $peapleQuantities = 100;
+        $companiesQuantities = 30;
+        $customersQuantities = 80;
+
+
 
         factory(Person::class, $peapleQuantities)->create()
             ->each(
                 function($person)
                 {
-                    $person->telephones()->saveMany(factory(Telephone::class,random_int(1,2))->create([
-                                                         'telephoneable_id' => $person->id,
-                                                         'telephoneable_type' =>Person::class,
-                    ]));
+                    $telephones = factory(Telephone::class,random_int(1,2))->make();
+                    $person->telephones()->saveMany($telephones);
+
                     $person->address()->associate(factory(Address::class)->create());
                     error_log( " address in person created " . $person->id );
-                    // for ($i=0; $i < random_int(1,3); $i++) { 
-                    //    factory(Telephone::class)
-                    //    ->create([
-                    //             'telephoneable_id' => $person->id,
-                    //             'telephoneable_type' =>Person::class,
-                    //             ]);
-                    // }
-                    // $person->Telephones->save();
-                    // $address = factory(Address::class)->save();
-                    // $person->address_id = $address->id;
+                   
                 }
             );
         ;
+
+
+
+
         factory(Company::class, $companiesQuantities)->create()
             ->each(
                 function($company)
                 {   
-                    $company->telephones()->saveMany(factory(Telephone::class,random_int(1,2))->create([
-                                                         'telephoneable_id' => $company->id,
-                                                         'telephoneable_type' =>Company::class,
-                    ]));
+                    $telephones = factory(Telephone::class,random_int(1,2))->make();
+                    $company->telephones()->saveMany($telephones);
+
                     $company->address()->associate(factory(Address::class)->create());
                     error_log( " address in company created " . $company->id );
                     
-                    //    factory(Telephone::class,random_int(1,2))
-                    //    ->create([
-                    //             'telephoneable_id' => $company->id,
-                    //             'telephoneable_type' =>Company::class,
-                    //             ]);
-                    
-                    // $company->Telephones->save();
-                    // $address = factory(Address::class)->save();
-                    // $company->address_id = $address->id;
                 }
             )
         ;
 
-        // $subjects =factory(Customer::class, $customersQuantities)->make();
 
-        // foreach ($subjects as $subject) {
-        //     repeat:
-        //     try {
-        //         $subject->save();
-        //     } catch (\Illuminate\Database\QueryException $e) {
-        //         $subject = factory(Customer::class)->make();
-        //         goto repeat;
-        //     }
-        // }
-        for ($i=0; $i < 800; $i++) { 
+        for ($i=0; $i < $customersQuantities; $i++) { 
             $subject = factory(Customer::class)->make();
             repeat:
             try {

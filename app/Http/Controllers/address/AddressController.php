@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\telephone;
+namespace App\Http\Controllers\address;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class Telephone extends Controller
+class AddressController extends Controller
 {
     /**
      * Display a listing of the resource.

@@ -4,12 +4,16 @@
 		"selected_items":
 		[
 			[
-				"addre",
-				"address_id"
+				"tele",
+				"telephoneable\t(Telephone.php)"
 			],
 			[
 				"telepho",
-				"telephoneable\t(Telephone.php)"
+				"telephoneable_id\t(2018_09_15_100928_create_telephones_table.php)"
+			],
+			[
+				"addre",
+				"address_id"
 			],
 			[
 				"cust",
@@ -84,29 +88,13 @@
 	"buffers":
 	[
 		{
-			"file": "database/factories/UserFactory.php",
+			"contents": "<?php\n\nnamespace App\\Http\\Controllers\\telephone;\n\nuse App\\Http\\Controllers\\Controller;\nuse App\\Telephone;\nuse Illuminate\\Http\\Request;\n\nclass TelephoneController extends Controller\n{\n    /**\n     * Display a listing of the resource.\n     *\n     * @return \\Illuminate\\Http\\Response\n     */\n    public function index()\n    {\n        error_log( \" get \"  );\n        return response()->json(['data' => Telephone::all()], 200);\n    }\n\n\n    // /**\n    //  * Store a newly created resource in storage.\n    //  *\n    //  * @param  \\Illuminate\\Http\\Request  $request\n    //  * @return \\Illuminate\\Http\\Response\n    //  */\n    // public function store(Request $request)\n    // {   \n        \n    //     $rules = [\n    //         'type' => 'required',\n    //         'nr' => 'required',\n    //         'comment' => 'max:100',\n    //         'telephoneable_id' => 'required',\n    //         'telephoneable_type' => 'required',\n    //     ];\n    //     try {\n            \n    //          $this->validate($request, $rules);\n    //          return response()->json(\n    //                                 ['error' => 'no error', 'code' => 400]\n    //                                 , 400);\n    //     } catch (Exception $e) {\n    //          return response()->json(\n    //                                 ['error' => $e->getMessage() , 'code' => 400]\n    //                                 , 400);\n    //     }\n    //     // check of validation\n       \n\n    //     // // get all data of request\n    //     // $data = $request->all();\n\n    //     // // create user\n    //     // try {\n    //     //      $telephone = Telephone::create($data);\n    //     //      error_log( \" tel created \"  );\n    //     //      return response()->json(['data' => $telephone], 201); // 201 means: has bean created\n    //     // } catch (Exception $e) {\n    //     //     error_log( \" tel not created \"  );\n    //     //     return response()->json(\n    //     //                             ['error' => $e->getMessage() , 'code' => 400]\n    //     //                             , 400);\n    //     // }\n       \n\n    //     //return response\n        \n    // }\n\n    /**\n     * Display the specified resource.\n     *\n     * @param  int  $id\n     * @return \\Illuminate\\Http\\Response\n     */\n    public function show($id)\n    {\n        return response()->json(['data' => Telephone::findOrFail($id)], 200);\n    }\n\n}\n",
+			"file": "app/Http/Controllers/telephone/TelephoneController.php",
+			"file_size": 3032,
+			"file_write_time": 131817698185657483,
 			"settings":
 			{
-				"buffer_size": 4306,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/Person.php",
-			"settings":
-			{
-				"buffer_size": 505,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "database/migrations/2018_09_15_100928_create_telephones_table.php",
-			"settings":
-			{
-				"buffer_size": 883,
-				"encoding": "UTF-8",
+				"buffer_size": 2377,
 				"line_ending": "Unix"
 			}
 		},
@@ -114,27 +102,18 @@
 			"file": "database/seeds/DatabaseSeeder.php",
 			"settings":
 			{
-				"buffer_size": 1555,
+				"buffer_size": 3889,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "database/migrations/2018_09_15_103700_create_companies_table.php",
+			"file": "routes/api.php",
 			"settings":
 			{
-				"buffer_size": 1032,
+				"buffer_size": 908,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "database/migrations/2018_09_15_103641_create_people_table.php",
-			"settings":
-			{
-				"buffer_size": 925,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -188,22 +167,38 @@
 		"/C/Users/Abida/soliderRestAPI/solrestapi/app",
 		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Http",
 		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Http/Controllers",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Http/Controllers/address",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Http/Controllers/company",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Http/Controllers/customer",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Http/Controllers/person",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Http/Controllers/telephone",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Providers",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/config",
 		"/C/Users/Abida/soliderRestAPI/solrestapi/database",
 		"/C/Users/Abida/soliderRestAPI/solrestapi/database/factories",
 		"/C/Users/Abida/soliderRestAPI/solrestapi/database/migrations",
-		"/C/Users/Abida/soliderRestAPI/solrestapi/database/seeds"
+		"/C/Users/Abida/soliderRestAPI/solrestapi/database/seeds",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/routes"
 	],
 	"file_history":
 	[
-		"/C/Users/Abida/soliderRestAPI/solrestapi/database/migrations/2018_09_15_100001_create_addresses_table.php",
-		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Address.php",
-		"/C/Users/Abida/soliderRestAPI/solrestapi/database/migrations/2018_09_15_103700_create_companies_table.php",
-		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Company.php",
-		"/C/Users/Abida/soliderRestAPI/solrestapi/database/migrations/2018_09_15_103641_create_people_table.php",
-		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Person.php",
 		"/C/Users/Abida/soliderRestAPI/solrestapi/routes/api.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Http/Controllers/address/AddressController.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Providers/RouteServiceProvider.php",
 		"/C/Users/Abida/soliderRestAPI/solrestapi/database/seeds/DatabaseSeeder.php",
 		"/C/Users/Abida/soliderRestAPI/solrestapi/database/factories/UserFactory.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/database/migrations/2018_09_15_103700_create_companies_table.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/database/migrations/2018_09_15_103641_create_people_table.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/database/migrations/2018_09_15_100928_create_telephones_table.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Telephone.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/composer.json",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Person.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/vendor/fzaninotto/faker/src/Faker/Generator.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Factory.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/database/migrations/2018_09_15_100001_create_addresses_table.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Address.php",
+		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Company.php",
 		"/C/Users/Abida/soliderRestAPI/solrestapi/database/migrations/2014_10_12_000000_create_users_table.php",
 		"/C/Users/Abida/soliderRestAPI/solrestapi/database/migrations/2018_09_15_103734_create_customers_table.php",
 		"/C/Users/Abida/soliderRestAPI/solrestapi/app/Providers/AppServiceProvider.php",
@@ -269,6 +264,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"EloquentFactory"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -286,135 +282,35 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "database/factories/UserFactory.php",
+					"file": "app/Http/Controllers/telephone/TelephoneController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4306,
+						"buffer_size": 2377,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1772,
-								1772
+								362,
+								421
 							]
 						],
 						"settings":
 						{
-							"SL.168.region_keys":
-							[
-								"sublime_linter.protected_regions"
-							],
-							"SL.29.region_keys":
-							[
-								"sublime_linter.protected_regions"
-							],
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 540.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/Person.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 505,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"SL.50.region_keys":
+							"SL.28.region_keys":
 							[
 							],
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "database/migrations/2018_09_15_100928_create_telephones_table.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 883,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								527,
-								545
-							]
-						],
-						"settings":
-						{
-							"SL.47.region_keys":
+							"SL.30.region_keys":
 							[
 							],
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "database/seeds/DatabaseSeeder.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1555,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								648,
-								715
-							]
-						],
-						"settings":
-						{
-							"SL.45.region_keys":
+							"SL.64.region_keys":
 							[
 								"sublime_linter.protected_regions"
 							],
@@ -424,68 +320,36 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 162.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "database/migrations/2018_09_15_103700_create_companies_table.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1032,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								499,
-								499
-							]
-						],
-						"settings":
-						{
-							"SL.42.region_keys":
-							[
-							],
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 558.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "database/migrations/2018_09_15_103641_create_people_table.php",
+					"buffer": 1,
+					"file": "database/seeds/DatabaseSeeder.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 925,
+						"buffer_size": 3889,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								750,
-								750
+								1320,
+								1377
 							]
 						],
 						"settings":
 						{
-							"SL.38.region_keys":
+							"SL.105.region_keys":
 							[
-								"sublime_linter.protected_regions"
+							],
+							"SL.31.region_keys":
+							[
 							],
 							"auto_complete": false,
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
@@ -493,10 +357,45 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 54.0,
+						"translation.y": 414.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "routes/api.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 908,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								902,
+								902
+							]
+						],
+						"settings":
+						{
+							"SL.103.region_keys":
+							[
+							],
+							"SL.30.region_keys":
+							[
+							],
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]

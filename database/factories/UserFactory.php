@@ -69,7 +69,7 @@ $factory->define(Telephone::class, function (FakerGenerator $faker) {
     return [
         'type'=> $faker->randomElement(Telephone::TYPES),
         'nr' => $faker->numberBetween(20000000,99999999),
-        'comment' => $faker->realText(50),
+        'comment' => $faker->realText(30),
     ];
 
 });
@@ -91,52 +91,23 @@ $factory->define(Customer::class, function (FakerGenerator $faker) {
                             
                             
          $customerable_type = $customerable[array_rand($customerable,1)];
-         #error_log(Person::class);
-         #error_log('customer_type' . $customerable_type);
-        if(($customerable_type==Company::class) && ((Customer::where(['customerable_type' => Company::class])->get()->count()) >= 250 )){
+        
+        if(($customerable_type==Company::class) && ((Customer::where(['customerable_type' => Company::class])->get()->count()) >= 25 )){
 
             $customerable_type = Person::class;
         }
         $temp = true;
         if ($customerable_type==person::class) {
             $customerable_id = Person::all()->random()->id;
-            //  while ( $temp) {
-            //     $customerable_id = Person::all()->random()->id;
-            //     $customer = Customer::where([
-            //         'customerable_type'=> Person::class,
-            //         'customerable_id' => strval($customerable_id)
-            //     ])->get();
-                
-            // if($customer->count() == 0){
-            //         $temp = false ;
-            //     }
-                
-            // }
             
 
         } else {
             $customerable_id = Person::all()->random()->id;
-            // while ( $temp ) {
-            //     $customerable_id = Company::all()->random()->id;
-            
-            //     $customerable_id = Person::all()->random()->id;
-            //     $customer = Customer::where([
-            //         'customerable_type'=> Company::class,
-            //         'customerable_id' => strval($customerable_id)
-            //     ])->get();
-            //     if($customer->count() == 0){
-            //         $temp = false ;
-            //     }
-                
-            // }
-            
                 
         }
-        
-
-    
-        // error_log( $customerable_id . " - " . $customerable_type );
-        // error_log( Customer::all()->count());
+       
+        error_log( $customerable_id . " - " . $customerable_type );
+        error_log( Customer::all()->count());
     return [
         'description' => $faker->realText(50),
         'customerable_id' => $customerable_id,
