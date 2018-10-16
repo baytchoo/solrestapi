@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Http\Controllers\ApiController;
+use App\User;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
-class UserController extends Controller
+class UserController extends ApiController
 {
+    public function __construct () {
+         $this->middleware(['jwt'  , 'admin']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,17 +18,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $users = User::all();
+        // $users = User::where('admin', User::REGULAR_USER)->get();
+        return $this->showAll($users);
     }
 
     /**
@@ -44,20 +40,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        return $this->showOne($user);
     }
 
     /**

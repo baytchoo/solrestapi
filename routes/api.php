@@ -32,6 +32,8 @@ Route::group([
 	Route::resource('telephones' , 'telephone\TelephoneController' , [ 'only' => ['index' , 'show']]);
 
 	Route::resource('addresses' , 'address\AddressController' , [ 'only' => ['index' , 'show']]);
+
+	Route::resource('users' , 'User\UserController', ['except' => ['create' , 'edit']]);
 });
 
 
