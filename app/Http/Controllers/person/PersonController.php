@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\person;
 
+use App\Http\Controllers\ApiController;
+use App\Person;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
-class PersonController extends Controller
+class PersonController extends ApiController
 {
     /**
      * Display a listing of the resource.
@@ -14,17 +15,8 @@ class PersonController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $persons= Person::with(['telephones','address'])->get();
+        return response()->json($persons, 200);
     }
 
     /**

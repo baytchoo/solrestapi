@@ -6,16 +6,21 @@ use App\Address;
 use App\Customer;
 use App\Telephone;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Person extends Model
 {
+    use SoftDeletes;
+
+    protected $dates = ['deleted_at'];
+    
     protected $fillable = [
     	'title',
         'first_name',
         'last_name',
         'cin', 
         'email',
-        'address_id',
+        // 'address_id',
     ];
 
     public function telephones()
@@ -25,8 +30,12 @@ class Person extends Model
 
     public function address()
     {
-    	return $this->belongsTo(Address::class);
+    	return $this->morphone(Address::class, 'addressable');
     }
 
+    public function company()
+    {
+        return $this->hasOne(Company::class);
+    }
     
 }

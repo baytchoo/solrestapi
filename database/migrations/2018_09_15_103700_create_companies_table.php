@@ -19,12 +19,13 @@ class CreateCompaniesTable extends Migration
             $table->string('tax_reg_nr');
             $table->string('business_reg_nr');
             $table->string('email');
-            $table->unsignedInteger('person_id');
-            $table->unsignedInteger('address_id')->nullable();
+            $table->unsignedInteger('person_id')->default(null);
+            // $table->unsignedInteger('address_id')->default(null);
             $table->timestamps();
 
             $table->foreign('person_id')->references('id')->on('people');
-            $table->foreign('address_id')->references('id')->on('addresses');
+            $table->softDeletes();
+            // $table->foreign('address_id')->references('id')->on('addresses');
         });
 
         

@@ -21,6 +21,7 @@ class CreateTelephonesTable extends Migration
             $table->integer('telephoneable_id')->default(null);
             $table->string('telephoneable_type')->default(null);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

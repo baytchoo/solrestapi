@@ -20,9 +20,10 @@ class CreatePeopleTable extends Migration
             $table->string('last_name');
             $table->integer('cin')->unique();
             $table->string('email');
-            $table->integer('address_id')->unsigned()->nullable();
+            // $table->integer('address_id')->unsigned();
             $table->timestamps();
-            $table->foreign('address_id')->references('id')->on('addresses');
+            $table->softDeletes();
+            // $table->foreign('address_id')->references('id')->on('addresses');
         });
     }
 

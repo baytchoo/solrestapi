@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\company;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\ApiController;
 
-class CompanyController extends Controller
+class CompanyController extends ApiController
 {
     /**
      * Display a listing of the resource.

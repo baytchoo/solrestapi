@@ -23,7 +23,10 @@ class CreateAddressesTable extends Migration
             $table->string('comment');
             $table->float('lat', 10, 6);
             $table->float('lng', 10, 6);
+            $table->integer('addressable_id')->default(null);
+            $table->string('addressable_type')->default(null);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

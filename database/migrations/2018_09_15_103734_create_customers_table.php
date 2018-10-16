@@ -20,6 +20,7 @@ class CreateCustomersTable extends Migration
             $table->string('customerable_type');
             $table->unique(['customerable_id' , 'customerable_type']);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
