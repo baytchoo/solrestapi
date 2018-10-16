@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class TelephoneController extends ApiController
 {
+
+    public function __construct () {
+         $this->middleware('jwt');
+    }
     /**
      * Display a listing of the resource.
      *

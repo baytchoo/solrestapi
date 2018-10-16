@@ -12,15 +12,26 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::group([
 
-Route::resource('companies' , 'company\CompanyController' , [ 'except' => ['create' , 'edit']]);
+    'middleware' => 'api',
 
-Route::resource('customers' , 'customer\CustomerController' , [ 'except' => ['create' , 'edit']]);
+], function () {
 
-Route::resource('people' , 'person\PersonController' , [ 'except' => ['create' , 'edit']]);
+    Route::post('login', 'ApiAuth\AuthController@login');
+    Route::post('logout', 'ApiAuth\AuthController@logout');
+    Route::post('refresh', 'ApiAuth\AuthController@refresh');
+    Route::post('me', 'ApiAuth\AuthController@me');
 
-Route::resource('telephones' , 'telephone\TelephoneController' , [ 'only' => ['index' , 'show']]);
+	Route::resource('companies' , 'company\CompanyController' , [ 'except' => ['create' , 'edit']]);
 
-Route::resource('addresses' , 'address\AddressController' , [ 'only' => ['index' , 'show']]);
+	Route::resource('customers' , 'customer\CustomerController' , [ 'except' => ['create' , 'edit']]);
+
+	Route::resource('people' , 'person\PersonController' , [ 'except' => ['create' , 'edit']]);
+
+	Route::resource('telephones' , 'telephone\TelephoneController' , [ 'only' => ['index' , 'show']]);
+
+	Route::resource('addresses' , 'address\AddressController' , [ 'only' => ['index' , 'show']]);
+});
 
 

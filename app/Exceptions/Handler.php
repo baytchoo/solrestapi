@@ -14,9 +14,12 @@ use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Tymon\JWTAuth\Exceptions\TokenExpiredException;
+use Tymon\JWTAuth\Exceptions\TokenInvalidException;
 
 class Handler extends ExceptionHandler
 {
+    use ApiResponser;
     /**
      * A list of the exception types that are not reported.
      *
@@ -56,6 +59,16 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        // if token is invalid
+        if ($exception instanceof TokenInvalidException) {
+            return $this->errorResponse("invalid Token!." , 400);
+        }
+        if ($exception instanceof TokenExpiredException) {
+            return $this->errorResponse("token expired!." , 400);
+        }
+        if ($exception instanceof JWTException) {
+            return $this->errorResponse("token problem!." , 400);
+        }
          // example: store user (post) with invalid attributes
         if ($exception instanceof ValidationException) {
             return $this->convertValidationExceptionToResponse($exception, $request);
