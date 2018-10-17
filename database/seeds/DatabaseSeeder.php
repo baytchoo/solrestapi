@@ -3,7 +3,9 @@
 use App\Address;
 use App\Company;
 use App\Customer;
+use App\Permission;
 use App\Person;
+use App\Role;
 use App\Telephone;
 use App\User;
 use Faker\Factory;
@@ -31,14 +33,17 @@ class DatabaseSeeder extends Seeder
         Customer::truncate();
         Telephone::truncate();
         Address::truncate();
+        Role::truncate();
+        Permission::truncate();
 
         $usersQuantities = 10;
         $peapleQuantities = 100;
         $companiesQuantities = 30;
         $customersQuantities = 80;
 
+        $this->call(RolesTableSeeder::class);
 
-        User::create([
+        $adminuser = User::create([
             'name' => 'me the admin',
             'email' => 'admin@admin.com',
             'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
@@ -47,7 +52,15 @@ class DatabaseSeeder extends Seeder
             'verification_token' =>  null ,
             'admin' =>  User::ADMIN_USER,
         ]);
-        factory(User::class, $usersQuantities)->create();
+        $adminuser->attachRole('manager');
+        $adminuser->attachRole('regular_user');
+
+        factory(User::class, $usersQuantities)->create()->each(
+                function($user)
+                {
+                    $user->attachRole('regular_user');                   
+                }
+            );
         factory(Person::class, $peapleQuantities)->create()
             ->each(
                 function($person)
@@ -63,7 +76,7 @@ class DatabaseSeeder extends Seeder
                    
                 }
             );
-        ;
+        
 
 
 

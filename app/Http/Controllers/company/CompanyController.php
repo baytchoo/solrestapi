@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers\company;
 
-use Illuminate\Http\Request;
+use App\Company;
 use App\Http\Controllers\ApiController;
+use Illuminate\Http\Request;
 
 class CompanyController extends ApiController
 {
+    public function __construct () {
+         $this->middleware('jwt');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +18,8 @@ class CompanyController extends ApiController
      */
     public function index()
     {
-        //
+        $companies= Company::with(['telephones','address'])->get();
+        return $this->showAll($companies);
     }
 
     /**
@@ -44,9 +49,10 @@ class CompanyController extends ApiController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Company $company)
     {
-        //
+        $company->load('telephones','address');
+        return $this->showOne($company);
     }
 
     /**

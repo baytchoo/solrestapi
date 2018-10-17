@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers\customer;
 
-use Illuminate\Http\Request;
+use App\Customer;
 use App\Http\Controllers\ApiController;
+use Illuminate\Http\Request;
 
 class CustomerController extends ApiController
 {
+    public function __construct () {
+         $this->middleware('jwt');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,17 +18,8 @@ class CustomerController extends ApiController
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        // $customers= Customer::with(['customerable'])->get();
+        return $this->showAll(Customer::all());
     }
 
     /**
@@ -44,20 +39,10 @@ class CustomerController extends ApiController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Customer $customer)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        // $customer->load('customerable');
+        return $this->showOne($customer);
     }
 
     /**

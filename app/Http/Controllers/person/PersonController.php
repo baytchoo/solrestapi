@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 
 class PersonController extends ApiController
 {
+    public function __construct () {
+         $this->middleware('jwt');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +19,7 @@ class PersonController extends ApiController
     public function index()
     {
         $persons= Person::with(['telephones','address'])->get();
-        return response()->json($persons, 200);
+        return $this->showAll($persons);
     }
 
     /**
@@ -27,7 +30,7 @@ class PersonController extends ApiController
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -36,9 +39,10 @@ class PersonController extends ApiController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Person $person)
     {
-        //
+        $person->load('telephones','address');
+        return $this->showOne($person);
     }
 
     /**
