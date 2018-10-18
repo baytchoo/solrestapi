@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace solider;
 
-use App\Address;
-use App\Customer;
-use App\Telephone;
+use solider\Address;
+use solider\Customer;
+use solider\Telephone;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 

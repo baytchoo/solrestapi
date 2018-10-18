@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace solider\Http\Controllers;
 
-use App\Traits\ApiResponser;
+use solider\Traits\ApiResponser;
 use Illuminate\Http\Request;
 
 class ApiController extends Controller

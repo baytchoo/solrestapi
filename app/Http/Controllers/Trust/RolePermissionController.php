@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Trust;
+namespace solider\Http\Controllers\Trust;
 
-use App\Http\Controllers\ApiController;
-use App\Permission;
-use App\Role;
+use solider\Http\Controllers\ApiController;
+use solider\Permission;
+use solider\Role;
 use Illuminate\Http\Request;
 
 class RolePermissionController extends ApiController

@@ -1,9 +1,9 @@
 <?php
 
-namespace App;
+namespace solider;
 
-use App\Company;
-use App\Person;
+use solider\Company;
+use solider\Person;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 

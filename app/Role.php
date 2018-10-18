@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace solider;
 
 use Laratrust\Models\LaratrustRole;
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\address;
+namespace solider\Http\Controllers\address;
 
-use App\Address;
-use App\Http\Controllers\ApiController;
+use solider\Address;
+use solider\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 
 class AddressController extends ApiController

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\telephone;
+namespace solider\Http\Controllers\telephone;
 
-use App\Http\Controllers\ApiController;
-use App\Telephone;
+use solider\Http\Controllers\ApiController;
+use solider\Telephone;
 use Illuminate\Http\Request;
 
 class TelephoneController extends ApiController

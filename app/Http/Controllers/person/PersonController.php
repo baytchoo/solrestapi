@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\person;
+namespace solider\Http\Controllers\person;
 
-use App\Http\Controllers\ApiController;
-use App\Person;
+use solider\Http\Controllers\ApiController;
+use solider\Person;
 use Illuminate\Http\Request;
 
 class PersonController extends ApiController

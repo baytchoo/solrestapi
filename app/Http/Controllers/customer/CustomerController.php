@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\customer;
+namespace solider\Http\Controllers\customer;
 
-use App\Customer;
-use App\Http\Controllers\ApiController;
+use solider\Customer;
+use solider\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 
 class CustomerController extends ApiController

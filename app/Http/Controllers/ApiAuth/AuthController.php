@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\ApiAuth;
+namespace solider\Http\Controllers\ApiAuth;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\Controller;
+use solider\Http\Controllers\Controller;
 
 class AuthController extends Controller
 {

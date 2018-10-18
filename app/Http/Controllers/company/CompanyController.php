@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\company;
+namespace solider\Http\Controllers\company;
 
-use App\Company;
-use App\Http\Controllers\ApiController;
+use solider\Company;
+use solider\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 
 class CompanyController extends ApiController

@@ -1,11 +1,11 @@
 <?php
 
-use App\Address;
-use App\Company;
-use App\Customer;
-use App\Person;
-use App\Telephone;
-use App\User;
+use solider\Address;
+use solider\Company;
+use solider\Customer;
+use solider\Person;
+use solider\Telephone;
+use solider\User;
 use Faker\Generator as FakerGenerator;
 
 /*

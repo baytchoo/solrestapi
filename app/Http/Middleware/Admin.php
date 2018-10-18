@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace solider\Http\Middleware;
 
-use App\Traits\ApiResponser;
+use solider\Traits\ApiResponser;
 use Closure;
 use JWTAuth;
 

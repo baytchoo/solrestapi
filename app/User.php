@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace solider;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\SoftDeletes;

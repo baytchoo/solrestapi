@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace solider\Http\Controllers\User;
 
-use App\Http\Controllers\ApiController;
-use App\Permission;
-use App\User;
+use solider\Http\Controllers\ApiController;
+use solider\Permission;
+use solider\User;
 use Illuminate\Http\Request;
 
 class UserPermissionController extends ApiController
