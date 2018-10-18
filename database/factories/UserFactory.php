@@ -58,7 +58,7 @@ $factory->define(Company::class, function (FakerGenerator $faker) {
         'tax_reg_nr' => $faker->lexify($string = '??????'),
         'business_reg_nr' => $faker->lexify($string = '????????'),
         'email' => $faker->unique()->safeEmail,
-        'person_id' => Person::all()->unique()->random()->id,
+        'person_id' => Person::all()->random()->id,
     ];
 
 });

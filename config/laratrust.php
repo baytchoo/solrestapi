@@ -67,7 +67,7 @@ return [
     |
     */
     'user_models' => [
-        'users' => 'App\User',
+        'users' => 'solider\User',
     ],
 
     /*
@@ -84,17 +84,17 @@ return [
         /**
          * Role model
          */
-        'role' => 'App\Role',
+        'role' => 'solider\Role',
 
         /**
          * Permission model
          */
-        'permission' => 'App\Permission',
+        'permission' => 'solider\Permission',
 
         /**
          * Team model
          */
-        'team' => 'App\Team',
+        'team' => 'solider\Team',
 
     ],
 

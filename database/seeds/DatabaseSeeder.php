@@ -1,13 +1,13 @@
 <?php
 
-use App\Address;
-use App\Company;
-use App\Customer;
-use App\Permission;
-use App\Person;
-use App\Role;
-use App\Telephone;
-use App\User;
+use solider\Address;
+use solider\Company;
+use solider\Customer;
+use solider\Permission;
+use solider\Person;
+use solider\Role;
+use solider\Telephone;
+use solider\User;
 use Faker\Factory;
 use Illuminate\Database\QueryException;
 use Illuminate\Database\Seeder;
