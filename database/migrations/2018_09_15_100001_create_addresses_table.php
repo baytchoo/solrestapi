@@ -20,11 +20,11 @@ class CreateAddressesTable extends Migration
             $table->string('city');
             $table->string('country');
             $table->integer('zip');
-            $table->string('comment');
-            $table->float('lat', 10, 6);
-            $table->float('lng', 10, 6);
-            $table->integer('addressable_id')->default(null);
-            $table->string('addressable_type')->default(null);
+            $table->string('comment')->nullable();
+            $table->float('lat', 10, 6)->nullable();
+            $table->float('lng', 10, 6)->nullable();
+            $table->integer('addressable_id')->nullable();
+            $table->string('addressable_type')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

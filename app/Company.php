@@ -20,7 +20,6 @@ class Company extends Model
         'tax_reg_nr',
         'business_reg_nr',
         'email',
-        // 'address_id',
         'person_id',
     ];
 

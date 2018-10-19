@@ -11,7 +11,7 @@ class Telephone extends Model
 
     protected $dates = ['deleted_at'];
     
-    
+    const TYPES_STRING = 'private,fixe,bureau,maison,fax,autre';
 	const TYPES = [
 		'private',
 		'fixe',

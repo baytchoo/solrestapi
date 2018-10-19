@@ -23,6 +23,11 @@ class Person extends Model
         // 'address_id',
     ];
 
+    public function customer()
+    {
+        return $this->morphone(Customer::class, 'customerable');
+    }
+    
     public function telephones()
     {
         return $this->morphMany(Telephone::class, 'telephoneable');

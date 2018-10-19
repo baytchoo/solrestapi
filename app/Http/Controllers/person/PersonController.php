@@ -30,7 +30,20 @@ class PersonController extends ApiController
      */
     public function store(Request $request)
     {
-        
+        $rules = [
+            'first_name' =>'required',
+            'last_name' =>'required',
+            'cin' =>'required', 
+            'email' =>'required|email',
+        ];
+
+        $this->validate($request, $rules);
+
+        $data = $request->all();
+
+        $person = Person::create($data);
+
+        return $this->showOne($person);
     }
 
     /**
@@ -46,26 +59,56 @@ class PersonController extends ApiController
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Person $person)
     {
-        //
+        $rules = [ 
+            'email' =>'email',
+        ];
+        // check of validation
+        $this->validate($request, $rules);
+        $person->fill($request->only([
+            'title',
+            'first_name',
+            'last_name',
+            'cin', 
+            'email',
+        ]));
+
+        // if ($request->has('title')) {
+        //     $person->title = $request->title;
+        // }
+
+        // if ($request->has('first_name')) {
+        //     $person->first_name = $request->first_name;
+        // }
+
+        // if ($request->has('last_name')) {
+        //     $person->last_name = $request->last_name;
+        // }
+
+        // if ($request->has('cin')) {
+        //     $person->cin = $request->cin;
+        // }
+
+        // if ($request->has('email')) {
+        //     $person->email = $request->email;
+        // }
+
+        // wenn user not changed
+        if($person->isClean()){
+            return $this->errorResponse('No changes detected', 422);
+        }
+
+        $person->save();
+
+        return $this->showOne($person);
+
     }
 
     /**
@@ -74,8 +117,10 @@ class PersonController extends ApiController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Person $person)
     {
-        //
+        $person->delete();
+
+        return $this->showOne($person);
     }
 }

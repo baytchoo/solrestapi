@@ -23,16 +23,6 @@ class CompanyController extends ApiController
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -40,7 +30,24 @@ class CompanyController extends ApiController
      */
     public function store(Request $request)
     {
-        //
+         $rules = [
+            'company_name' => 'required',
+            'tax_reg_nr' => 'required',
+            'email' => 'required|email',
+        ];
+
+        $this->validate($request, $rules);
+
+        $data = $request->only([
+            'company_name',
+            'tax_reg_nr',
+            'business_reg_nr',
+            'email',
+        ]);
+
+        $company = Company::create($data);
+
+        return $this->showOne($company);
     }
 
     /**
@@ -56,26 +63,35 @@ class CompanyController extends ApiController
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Company $company)
     {
-        //
+        $rules = [ 
+            'email' =>'email',
+        ];
+        // check of validation
+        $this->validate($request, $rules);
+
+        $company->fill($request->only([
+            'company_name',
+            'tax_reg_nr',
+            'business_reg_nr',
+            'email',
+        ]));
+
+        // wenn user not changed
+        if($company->isClean()){
+            return $this->errorResponse('No changes detected', 422);
+        }
+
+        $company->save();
+
+        return $this->showOne($company);
     }
 
     /**
@@ -84,8 +100,10 @@ class CompanyController extends ApiController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Company $company)
     {
-        //
+        $company->delete();
+
+        return $this->showOne($company);
     }
 }

@@ -37,10 +37,17 @@ Route::group([
 	*	peaple
 	*/
 	Route::resource('people' , 'person\PersonController' , [ 'except' => ['create' , 'edit']]);
+	Route::resource('people.telephones' , 'person\PersonTelephoneController' , [ 'only' => ['index' ,'store', 'update', 'destroy']]);
+	Route::resource('people.addresses' , 'person\PersonAddressController' , [ 'only' => ['index' ,'store', 'update', 'destroy']]);
+	Route::resource('people.customers' , 'person\PersonCustomerController' , [ 'only' => ['store']]);
     /*
 	*	companies
 	*/
 	Route::resource('companies' , 'company\CompanyController' , [ 'except' => ['create' , 'edit']]);
+	Route::resource('companies.telephones' , 'company\CompanyTelephoneController' , [ 'only' => ['index' ,'store', 'update', 'destroy']]);
+	Route::resource('companies.addresses' , 'company\CompanyAddressController' , [ 'only' => ['index' ,'store' ,'update', 'destroy']]);
+	Route::resource('companies.people' , 'company\CompanyPersonController' , [ 'only' => ['create' , 'edit']]);
+	Route::resource('companies.customers' , 'company\CompanyCustomerController' , [ 'only' => ['store']]);
 	/*
 	*	customers
 	*/

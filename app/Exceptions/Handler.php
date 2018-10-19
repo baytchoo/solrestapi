@@ -116,6 +116,9 @@ class Handler extends ExceptionHandler
            if ($errorCode == 1451) {
                 return $this->errorResponse('Cannont remove this resource permanently. It is related with another resource(s)!.', 409);
            }
+           if ($errorCode == 1062) {
+                return $this->errorResponse('Duplicate entry!.', 409);
+           }
         }
         // false token
         if ($exception instanceof TokenMismatchException) {
